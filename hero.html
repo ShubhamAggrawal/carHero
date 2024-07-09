@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/global.css">
+        <link rel="stylesheet" href="./css/hero.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="hero-container ">
+            <div class="hero-layout-video">
+                <video src="./img/herosectioonvideo.mp4" muted loop autoplay></video>
+            </div>
+            <div class="content-wrapper">
+                <div class="content-wrapper">
+                    <div class="heading-wrapper">
+                        <div class="heading">
+                            Eleganță în mișcare
+                        </div>
+                        <div class="sub-heading">
+                            Călătoria ta începe aici!
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <button class="stock-btn">
+                            Masini in stoc
+                        </button>
+                        <button class="order-btn">
+                            Masini la comanda
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-form-wrapper">
+                    <div class="features-section">
+                        <div class="features">
+                            Siguranta
+                        </div>
+                        <div class="border-div"></div>
+                        <div class="features">
+                            Transparenta
+                        </div>
+                        <div class="border-div"></div>
+                        <div class="features">
+                            Accesibilitate
+                        </div>
+                    </div>
+                    <div class="dropdown-container">
+                        <div id="container" class="container">
+
+
+                            <div class="select filter-btn select-dropdown__button">
+                                <div class="selectBtn" data-type="firstOption">
+                                    Marca
+                                </div>
+                                <div class="selectDropdown">
+                                    <div class="option" data-type="firstOption">First option</div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-div"></div>
+
+                            
+                            <div class="select filter-btn select-dropdown__button">
+                                <div class="selectBtn" data-type="firstOption">
+                                    Model
+                                </div>
+                                <div class="selectDropdown">
+                                    <div class="option" data-type="firstOption">First 1</div>
+                                    <div class="option" data-type="firstOption">First option</div>
+                                </div>
+                            </div>
+
+                            <div class="border-div"></div>
+
+                            
+                            <div class="select filter-btn select-dropdown__button">
+                                <div class="selectBtn" data-type="firstOption">
+                                    Anul
+                                </div>
+                                <div class="selectDropdown">
+                                    <div class="option" data-type="firstOption">First option</div>
+                                </div>
+                            </div>
+                            
+                            <button class="filter-btn">
+                                    Cauta
+                                <span class="filter-btn-img">
+                                    <img src="./img/arrow-up-right.svg" alt="arrow-up-right">
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-Features">
+                        <div class="featuresheading">150 masini in stoc</div>
+                        <div class="featuresheading">Cautare avansata</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+<script>
+    let index = 1;
+
+const on = (listener, query, fn) => {
+	document.querySelectorAll(query).forEach(item => {
+		item.addEventListener(listener, el => {
+			fn(el);
+		})
+	})
+}
+
+on('click', '.selectBtn', item => {
+	const next = item.target.nextElementSibling;
+	next.classList.toggle('toggle');
+	next.style.zIndex = index++;
+});
+on('click', '.option', item => {
+	item.target.parentElement.classList.remove('toggle');
+
+	const parent = item.target.closest('.select').children[0];
+	parent.setAttribute('data-type', item.target.getAttribute('data-type'));
+	parent.innerText = item.target.innerText;
+})
+</script>
+
+
+
+</html>
