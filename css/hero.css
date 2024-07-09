@@ -8,12 +8,12 @@ min-height: 700px;
 .hero-container .hero-layout-video {
 position: absolute;
 inset: 0 !important;
-min-height: 100vh !important;
+min-height: 100vh;
 height: 100%;
 width: 100%;
 overflow: hidden;
 }
-.hero-container .hero-layout-video video {
+.hero-container .hero-layout-video .video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -345,15 +345,19 @@ font-weight: 400;
 }
 
 @media (max-width: 992px) {
-    .hero-container{
-        height: unset;
-    }
+    
     .dropdown-container button.filter-btn{
         margin-top: 20px;
     }
 }
 
 @media (max-width: 768px) {
+    .hero-container{
+        height: unset;
+    }
+    .hero-container .hero-layout-video{
+        min-height: unset;
+    }
 .hero-container .content-wrapper {
     gap: 40px;
 }
